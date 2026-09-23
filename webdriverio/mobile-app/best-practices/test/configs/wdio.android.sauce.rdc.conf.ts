@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `Android Native App Best Practices build-${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ===================================================================================
 // Capabilities
@@ -48,6 +49,9 @@ config.capabilities = [
       resigningEnabled: true,
       allowTouchIdEnroll: true,
       sauceLabsImageInjectionEnabled: true,
+      tags: sauceTags,
+      networkCapture: true,
+      vitals: true,
     },
   },
 ];

@@ -7,8 +7,10 @@ sauce:
   concurrency: 10 # Controls how many suites are executed at the same time.
   metadata:
     tags:
-      - testcafe
-      - default
+      - framework:testcafe
+      - cli:saucectl
+      - lang:javascript
+      - usecase:desktop-ui
     build: "TestCafe: Default test set - $DATE"
 
 # Testcafe specific info

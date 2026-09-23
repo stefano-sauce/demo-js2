@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `Android RDC Biometrics: ${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ==================
 // Specify Test Files
@@ -36,6 +37,9 @@ config.capabilities = [
     // @ts-ignore
     phoneOnly: true,
     build: buildName,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
   },
   {
     // The defaults you need to have in your config
@@ -58,6 +62,9 @@ config.capabilities = [
     // @ts-ignore
     phoneOnly: true,
     build: buildName,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
   },
 ];
 

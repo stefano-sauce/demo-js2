@@ -1,5 +1,7 @@
 const {config} = require('./wdio.shared.conf');
 
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
+
 // =====================
 // Sauce specific config
 // =====================
@@ -40,8 +42,10 @@ config.capabilities = [
     // put in vendor prefixed options, see
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
+      extendedDebugging: true,
       build: `Sauce Labs W3C Desktop build-${new Date().getTime()}`,
-      screenResolution: '1440x900'
+      screenResolution: '1440x900',
+      tags: sauceTags,
     },
   },
 ];

@@ -1,5 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
+
 // ============
 // Capabilities
 // ============
@@ -30,6 +32,9 @@ config.capabilities = [
       // Flutter 3 apps can only be automated with Appium 2
       appiumVersion: 'latest',
       name: 'Appium 2 - Flutter - iOS',
+      tags: sauceTags,
+      networkCapture: true,
+      vitals: true,
     },
     'appium:autoAcceptAlerts': true,
   },

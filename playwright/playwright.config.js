@@ -52,7 +52,12 @@ const config = {
       ? [['html', { open: 'never', outputFolder: '__assets__/html-report/', attachmentsBaseURL: './'}]]
       : selectedProject === 'local'
         ? [['html', { open: 'always' }]]
-        : [['@saucelabs/playwright-reporter', { mergeVideos: true, outputFile: 'sauce-report.json' }], ['list']],
+        : [['@saucelabs/playwright-reporter', {
+            mergeVideos: true,
+            outputFile: 'sauce-report.json',
+            region: process.env.SAUCE_REGION || 'us-west-1',
+            tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
+          }], ['list']],
 
   projects: [
     {

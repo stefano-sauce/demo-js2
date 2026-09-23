@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS RDC Biometrics: ${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ==================
 // Specify Test Files
@@ -32,6 +33,9 @@ config.capabilities = [
     // @ts-ignore
     allowTouchIdEnroll: true,
     build: buildName,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
     // Need to set the version to 1.21.0 because there's a bug in
     // Appium 1.22.0 which breaks the reset
     appiumVersion: "1.21.0"
@@ -53,6 +57,9 @@ config.capabilities = [
     // @ts-ignore
     allowTouchIdEnroll: true,
     build: buildName,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
     // Need to set the version to 1.21.0 because there's a bug in
     // Appium 1.22.0 which breaks the reset
     appiumVersion: "1.21.0"

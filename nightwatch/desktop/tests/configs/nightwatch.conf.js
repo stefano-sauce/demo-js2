@@ -25,9 +25,14 @@ module.exports = {
             username: process.env.SAUCE_USERNAME,
             access_key: process.env.SAUCE_ACCESS_KEY,
             desiredCapabilities: {
-                build,
-                screenResolution: '1600x1200',
                 seleniumVersion: '3.141.59',
+                'sauce:options': {
+                    build,
+                    screenResolution: '1600x1200',
+                    // Captures HAR/network logs and console logs (Chrome/Firefox only)
+                    extendedDebugging: true,
+                    tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
+                },
             },
         },
         // Sauce Labs capabilities

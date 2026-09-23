@@ -7,8 +7,10 @@ sauce:
   concurrency: 100
   metadata:
     tags:
-      - cypress
-      - default
+      - framework:cypress
+      - cli:saucectl
+      - lang:javascript
+      - usecase:desktop-ui
     build: "config-ex1 $CURRENT_TIME"
 cypress:
   version: package.json

@@ -21,12 +21,17 @@ describe('Sauce Demo Test', function() {
         accessKey: accessKey,
         build: 'sample safari-build',
         name: 'sample safari-test',
+        // Network/console log capture (Chrome/Firefox get HAR; harmless no-op on Safari)
+        extendedDebugging: true,
+        tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
       }
     }
-    
+
+    const region = process.env.SAUCE_REGION || 'us-west-1';
+
     driver = await new webdriver.Builder()
       .withCapabilities(capabilities)
-      .usingServer('https://ondemand.us-west-1.saucelabs.com:443/wd/hub')
+      .usingServer(`https://ondemand.${region}.saucelabs.com:443/wd/hub`)
       .build();
 
     // run commands and assertions

@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `Android Emulator Native App Best Practices build-${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ===================================================================================
 // Capabilities
@@ -46,6 +47,7 @@ config.capabilities = ['14', '15'].map((osVersion: string) => ({
   'sauce:options': {
     build: buildName,
     appiumVersion: '2.11.0',
+    tags: sauceTags,
   },
 }));
 

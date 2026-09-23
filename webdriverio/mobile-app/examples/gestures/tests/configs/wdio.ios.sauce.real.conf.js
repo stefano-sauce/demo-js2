@@ -1,4 +1,5 @@
 const {config} = require('./wdio.shared.sauce.conf');
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ============
 // Capabilities
@@ -22,6 +23,9 @@ config.capabilities = [
     // Add a name to the test
     name: 'Appium Gestures',
     shouldTerminateApp: true,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
   },
 ];
 

@@ -2,6 +2,7 @@ const { config } = require('./wdio.shared.sauce.mobile.conf');
 const build = `Best Practices: iOS Safari Appium '${
   config.appiumVersion
 }' build-${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ============
 // Capabilities
@@ -31,6 +32,7 @@ config.capabilities = ['15.5', '16.2'].map((iOSVersion) => ({
   'sauce:options': {
     build: build,
     ...(Math.floor(+iOSVersion) >= 16 && { appiumVersion: '2.0.0' }),
+    tags: sauceTags,
   },
 }));
 

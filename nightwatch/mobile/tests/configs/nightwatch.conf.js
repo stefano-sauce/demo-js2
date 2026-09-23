@@ -29,6 +29,10 @@ module.exports = {
                     userName: process.env.SAUCE_USERNAME,
                     accessKey: process.env.SAUCE_ACCESS_KEY,
                     build: build,
+                    // Real-device-only: network traffic capture + CPU/memory/network vitals
+                    networkCapture: true,
+                    vitals: true,
+                    tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
                 },
             },
             webdriver: {

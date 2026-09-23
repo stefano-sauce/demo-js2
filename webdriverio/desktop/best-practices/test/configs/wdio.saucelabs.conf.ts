@@ -3,8 +3,10 @@ import { SauceRegions } from '@wdio/types/build/Options';
 import SauceLabs, { Job } from 'saucelabs';
 
 const defaultBrowserSauceOptions = {
+  extendedDebugging: true,
   build: process.env.BUILD || `WebdriverIO Async Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
   screenResolution: '1600x1200',
+  tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
 };
 
 // =====================

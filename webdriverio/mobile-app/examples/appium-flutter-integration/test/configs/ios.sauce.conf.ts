@@ -1,6 +1,8 @@
 //@ts-nocheck
 import { config as baseConfig } from './wdio.sauce.conf.js';
 
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
+
 export const config: WebdriverIO.Config = {
     ...baseConfig,
 
@@ -26,6 +28,9 @@ export const config: WebdriverIO.Config = {
                 name: "1st AppiumFlutterIntegrationDriver test using appium latest",
                 resigningEnabled: true,
                 appiumVersion: "latest",
+                tags: sauceTags,
+                networkCapture: true,
+                vitals: true,
             },
         }
     ],

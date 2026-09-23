@@ -8,8 +8,10 @@ sauce:
     concurrency: 10 # Controls how many suites are executed at the same time.
     metadata:
         tags:
-            - playwright
-            - default
+            - framework:playwright
+            - cli:saucectl
+            - lang:javascript
+            - usecase:desktop-ui
         build: 'Playwright: Default test set - $DATE'
     sauceignore: .sauceignore
 

@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `Android Emulator Biometrics: ${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ==================
 // Specify Test Files
@@ -35,6 +36,7 @@ config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11.0'].map((platformVersion
   'sauce:options': {
     // Group builds by build name
     build: buildName,
+    tags: sauceTags,
   }
 }));
 

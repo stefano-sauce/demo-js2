@@ -72,6 +72,15 @@ exports.config = {
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
+      // Required by Sauce Performance: newer WebdriverIO defaults to WebDriver BiDi,
+      // which performance capture is not compatible with yet.
+      'wdio:enforceWebDriverClassic': true,
+      'sauce:options': {
+        extendedDebugging: true,
+        // Sauce Performance (Lighthouse-based): Chrome desktop only
+        capturePerformance: true,
+        tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
+      },
     },
   ],
   //

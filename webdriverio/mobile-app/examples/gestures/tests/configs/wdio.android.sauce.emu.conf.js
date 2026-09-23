@@ -1,4 +1,5 @@
 const {config} = require('./wdio.shared.sauce.conf');
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ============
 // Capabilities
@@ -28,6 +29,7 @@ config.capabilities = [
         // Always default the language to a language you prefer so you know the app language is always as expected
         language: 'en',
         locale: 'en',
+        tags: sauceTags,
     },
 ];
 

@@ -1,8 +1,14 @@
 apiVersion: v1alpha
 kind: playwright
 sauce:
-  region: us-west-1
+  region: eu-central-1 # or us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    tags:
+      - framework:playwright
+      - cli:saucectl
+      - lang:javascript
+      - usecase:desktop-ui
 playwright:
   version: package.json # See https://docs.saucelabs.com/web-apps/automated-testing/playwright/#supported-testing-platforms for a list of supported versions.
   configFile: playwright.config.js # See https://docs.saucelabs.com/web-apps/automated-testing/playwright/yaml/#configfile for a list of supported configuration files.

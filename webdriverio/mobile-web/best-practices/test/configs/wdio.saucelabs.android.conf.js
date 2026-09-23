@@ -2,6 +2,7 @@ const { config } = require('./wdio.shared.sauce.mobile.conf');
 const build = `Best Practices: Android Chrome Appium '${
   config.appiumVersion
 }' build-${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ============
 // Capabilities
@@ -34,6 +35,7 @@ config.capabilities = ['14.0', '15.0'].map(
       // Older versions of Appium give issues with sending keys, see
       // https://github.com/appium/appium/issues/12059
       'appium:appiumVersion': '2.0.0',
+      tags: sauceTags,
     },
   })
 );

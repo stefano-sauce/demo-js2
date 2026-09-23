@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS Simulator Native App Best Practices build-${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ===================================================================================
 // Capabilities
@@ -44,6 +45,7 @@ config.capabilities = ['17.0'].map(
     'sauce:options': {
       build: buildName,
       appiumVersion: '2.1.3',
+      tags: sauceTags,
     },
   })
 );

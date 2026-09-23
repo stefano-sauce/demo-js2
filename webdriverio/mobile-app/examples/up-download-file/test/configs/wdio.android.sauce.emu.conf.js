@@ -1,5 +1,6 @@
 const {config} = require('./wdio.shared.sauce.conf');
 const buildName = `Up/download image on/from Sauce Labs emulators: ${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ==================
 // Specify Test Files
@@ -40,6 +41,9 @@ config.capabilities = ['10.0'].map((platformVersion) => (
     locale: 'en',
     // Group builds by build name
     build: buildName,
+    'sauce:options': {
+      tags: sauceTags,
+    },
   }
 ))
 exports.config = config;

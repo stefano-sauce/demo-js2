@@ -1,5 +1,6 @@
 const { config } = require('./wdio.shared.sauce.conf');
 const testName = 'Image injection iOS';
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ============
 // Capabilities
@@ -27,6 +28,9 @@ config.capabilities = [16, 17, 18].map((platformVersion) => ({
     // Enable image-injection on RDC
     sauceLabsImageInjectionEnabled: true,
     shouldTerminateApp: true,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
   },
 }));
 

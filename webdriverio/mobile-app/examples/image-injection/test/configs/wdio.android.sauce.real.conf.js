@@ -1,5 +1,6 @@
 const { config } = require('./wdio.shared.sauce.conf');
 const testName = 'Image injection Android';
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ============
 // Capabilities
@@ -30,6 +31,9 @@ config.capabilities = [13, 14].map((platformVersion) => ({
     sauceLabsImageInjectionEnabled: true,
     // Allow the camera permissions
     autoGrantPermissions: true,
+    tags: sauceTags,
+    networkCapture: true,
+    vitals: true,
   },
 }));
 

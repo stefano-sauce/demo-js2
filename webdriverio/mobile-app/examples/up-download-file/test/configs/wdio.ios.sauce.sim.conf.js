@@ -1,5 +1,6 @@
 const {config} = require('./wdio.shared.sauce.conf');
 const buildName = `Upload image to Sauce Labs simulators: ${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ==================
 // Specify Test Files
@@ -36,6 +37,7 @@ config.capabilities = ['14.5', '15.0'].map((platformVersion) => (
     // Group builds by build name
     'sauce:options': {
       build: buildName,
+      tags: sauceTags,
     }
   }
 ))

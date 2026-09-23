@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.safari.us": "npx mocha test/simple.safari.spec.js --timeout 90000"
+    "test.safari.us": "npx mocha test/simple.safari.spec.js --timeout 90000",
+    "test.safari.eu": "SAUCE_REGION=eu-central-1 npx mocha test/simple.safari.spec.js --timeout 90000"
   },
   "keywords": [],
   "license": "ISC",

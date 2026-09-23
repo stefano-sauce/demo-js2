@@ -2,8 +2,10 @@ const { test: base, chromium, request } = require('@playwright/test');
 
 const SAUCE_USERNAME = process.env.SAUCE_USERNAME;
 const SAUCE_ACCESS_KEY = process.env.SAUCE_ACCESS_KEY;
-const SAUCE_URL = 'https://ondemand.us-west-1.saucelabs.com/wd/hub/';
+const SAUCE_REGION = process.env.SAUCE_REGION || 'us-west-1';
+const SAUCE_URL = `https://ondemand.${SAUCE_REGION}.saucelabs.com/wd/hub/`;
 const SAUCE_BUILD_NAME = process.env.SAUCE_BUILD_NAME || 'Local Playwright Grid' + Date.now();
+const SAUCE_TAGS = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 const test = base.extend({
     page: async ({page}, use, testInfo) => {
@@ -30,6 +32,8 @@ async function getSessionPayload(testName) {
                     _tptCommanderVersion: 'stable',
                     name: testName,
                     build: SAUCE_BUILD_NAME,
+                    extendedDebugging: true,
+                    tags: SAUCE_TAGS,
                 }
             }
         }
@@ -78,7 +82,7 @@ async function remoteTeardown(page, status) {
 }
 
 async function updateJobStatus(sessionId, status) {
-    const url = `https://api.us-west-1.saucelabs.com/rest/v1/${SAUCE_USERNAME}/jobs/${sessionId}`;
+    const url = `https://api.${SAUCE_REGION}.saucelabs.com/rest/v1/${SAUCE_USERNAME}/jobs/${sessionId}`;
     const auth = Buffer.from(`${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY}`).toString('base64');
 
     const requestContext = await request.newContext();

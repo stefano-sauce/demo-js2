@@ -1,5 +1,6 @@
 import config from './wdio.shared.sauce.conf';
 const buildName = `iOS Simulator Native Simple Example: build-${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 config.capabilities = [{
    platformName: 'iOS',
@@ -15,6 +16,7 @@ config.capabilities = [{
    'sauce:options': {
       build: buildName,
       appiumVersion: '1.22.0',
+      tags: sauceTags,
    },
 }];
 

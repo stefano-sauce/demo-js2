@@ -1,5 +1,7 @@
 const { config } = require('./wdio.shared.conf');
 
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
+
 // =====================
 // Sauce specific config
 // =====================
@@ -43,6 +45,7 @@ config.capabilities = [
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
       appiumVersion: '1.18.1',
+      tags: sauceTags,
     },
   },
   /**
@@ -68,6 +71,7 @@ config.capabilities = [
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
       appiumVersion: '1.19.1',
+      tags: sauceTags,
     },
   },
 ];

@@ -1,6 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS Simulators Biometrics: ${new Date().getTime()}`;
+const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 
 // ==================
 // Specify Test Files
@@ -35,6 +36,7 @@ config.capabilities = [
     'sauce:options': {
       // Group builds by build name
       build: buildName,
+      tags: sauceTags,
     },
   },
   // This one has FaceID
@@ -57,6 +59,7 @@ config.capabilities = [
     'sauce:options': {
       // Group builds by build name
       build: buildName,
+      tags: sauceTags,
     },
   },
 ];

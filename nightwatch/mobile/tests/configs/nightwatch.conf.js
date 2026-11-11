@@ -24,10 +24,10 @@ module.exports = {
                 host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
                 port: 443,
             },
+            username: process.env.SAUCE_USERNAME,
+            access_key: process.env.SAUCE_ACCESS_KEY,
             desiredCapabilities: {
                 'sauce:options': {
-                    userName: process.env.SAUCE_USERNAME,
-                    accessKey: process.env.SAUCE_ACCESS_KEY,
                     build: build,
                     // Real-device-only: network traffic capture + CPU/memory/network vitals
                     networkCapture: true,

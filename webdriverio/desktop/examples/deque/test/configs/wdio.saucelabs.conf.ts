@@ -3,7 +3,7 @@ import {SauceRegions} from '@wdio/types/build/Options';
 
 const defaultBrowserSauceOptions = {
     extendedDebugging: true,
-    build: `WebdriverIO Deque axe Accessibility Example: Sauce Labs Desktop Web build-${new Date().getTime()}`,
+    build: `deque-web: WebdriverIO axe-core Accessibility (saucedemo.com) build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
     tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
 };

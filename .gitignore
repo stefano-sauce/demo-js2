@@ -35,3 +35,7 @@ v6/
 !webdriverio/mobile-app/examples/appium-flutter/apps
 **/*native-screenshot.png
 **/*flutter-screenshot.png
+
+# Generated test run output (Nightwatch reports include Sauce credentials)
+**/tests_output/
+playwright/sauce-report.json

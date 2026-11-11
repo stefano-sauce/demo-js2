@@ -210,5 +210,61 @@ pushd selenium > /dev/null
     run_npm "framework:selenium,cli:mocha,lang:javascript,usecase:cross-browser,feature:network-capture" npm run test.safari.eu
 popd > /dev/null
 
+# --- 8. Mobilewright (mobilewright-saucelabs driver, Real Device Access API) ---
+# Results land in Access API > Test Results, not Automated > Test Results. Builds the local driver checkout and
+# links it into both e2e suites (`npm install` in a suite replaces the link, so link again after it).
+echo "--- Section: Mobilewright ---" >> "$LOG_FILE"
+MOBILEWRIGHT_DIR="$HOME/Documents/GitHub/mobilewright-saucelabs"
+MOBILEWRIGHT_TAGS="repo:mobilewright-saucelabs,framework:mobilewright,lang:typescript"
+if [ -d "$MOBILEWRIGHT_DIR" ]; then
+    pushd "$MOBILEWRIGHT_DIR" > /dev/null
+        # npm ci: no lockfile rewrites in the checkout
+        npm ci >> "$LOG_FILE" 2>&1
+        run_npm "$MOBILEWRIGHT_TAGS" npm run build
+        npm link >> "$LOG_FILE" 2>&1
+        # Unit tests (no devices), then the driver's integration tests on real devices
+        run_npm "$MOBILEWRIGHT_TAGS" npm test
+        run_npm "$MOBILEWRIGHT_TAGS,cli:playwright,usecase:driver-integration" env SAUCE_INTEGRATION=1 SAUCE_PLATFORM=android npx playwright test src/integration.test.ts
+        run_npm "$MOBILEWRIGHT_TAGS,cli:playwright,usecase:driver-integration" env SAUCE_INTEGRATION=1 SAUCE_PLATFORM=ios npx playwright test src/integration.test.ts
+        # e2e suites through `mobilewright test`, one platform per process
+        for suite in "sauce-demo-app:,feature:sauce-connect" "mobilewright-demo-app:"; do
+            name="${suite%%:*}"
+            features="${suite#*:}"
+            pushd "e2e/$name" > /dev/null
+                npm ci >> "$LOG_FILE" 2>&1
+                npm link @saucelabs/mobilewright-driver >> "$LOG_FILE" 2>&1
+                run_npm "$MOBILEWRIGHT_TAGS,cli:mobilewright,usecase:$name$features" npm run test:android
+                run_npm "$MOBILEWRIGHT_TAGS,cli:mobilewright,usecase:$name$features" npm run test:ios
+            popd > /dev/null
+        done
+        # `npm link` can touch the suites' lockfiles; keep the checkout clean
+        git checkout -- package-lock.json e2e/*/package-lock.json >> "$LOG_FILE" 2>&1
+    popd > /dev/null
+else
+    echo "ERROR: Directory $MOBILEWRIGHT_DIR does not exist, skipping Mobilewright." >> "$LOG_FILE"
+fi
+
+# --- 9. Maestro (maestro-runner over Appium: Android/iOS real devices, emulators, simulators) ---
+# The repo's own script tags every job (repo:demo-maestro-runner, framework:maestro, platform:*, device:*);
+# run_npm's SAUCE_TAGS adds ci:cron on top.
+echo "--- Section: Maestro ---" >> "$LOG_FILE"
+MAESTRO_DIR="$HOME/Documents/GitHub/demo-maestro-runner"
+if [ -x "$MAESTRO_DIR/scripts/run_sauce_maestro.sh" ]; then
+    run_npm "ci:cron" "$MAESTRO_DIR/scripts/run_sauce_maestro.sh"
+else
+    echo "ERROR: $MAESTRO_DIR/scripts/run_sauce_maestro.sh not found, skipping Maestro." >> "$LOG_FILE"
+fi
+
+# --- 10. Vibium (desktop Chrome/Firefox/Edge over WebDriver BiDi: JS client, Python client, CLI) ---
+# The repo's own script installs deps and tags every job (repo:vibium-on-saucelabs, framework:vibium,
+# lang:*, cli:*, usecase:*, browser:*, os:*); run_npm's SAUCE_TAGS adds ci:cron on top.
+echo "--- Section: Vibium ---" >> "$LOG_FILE"
+VIBIUM_DIR="$HOME/github/vibium-on-saucelabs"
+if [ -x "$VIBIUM_DIR/scripts/run_sauce_vibium.sh" ]; then
+    run_npm "ci:cron" "$VIBIUM_DIR/scripts/run_sauce_vibium.sh"
+else
+    echo "ERROR: $VIBIUM_DIR/scripts/run_sauce_vibium.sh not found, skipping Vibium." >> "$LOG_FILE"
+fi
+
 echo "All tests completed: $(date)" >> "$LOG_FILE"
 echo "--------------------------------------------------" >> "$LOG_FILE"

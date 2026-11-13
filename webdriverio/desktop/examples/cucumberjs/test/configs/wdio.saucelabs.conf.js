@@ -1,6 +1,8 @@
 const { config } = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
   extendedDebugging: true,
+  // Page-load performance metrics (Chrome only, needs extendedDebugging)
+  capturePerformance: true,
   build: `WDIO CucumberJS: Sauce Labs Desktop Web build-${new Date().getTime()}`,
   screenResolution: '1600x1200',
   tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),

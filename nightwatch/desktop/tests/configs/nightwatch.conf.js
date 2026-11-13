@@ -1,5 +1,12 @@
 const {join} = require('path');
 const build = `Nightwatch Desktop Web build-${process.env.DATE}`;
+const sauceOptions = {
+    build,
+    screenResolution: '1600x1200',
+    // Captures HAR/network logs and console logs (Chrome/Firefox only)
+    extendedDebugging: true,
+    tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
+};
 
 // More information about the configuration file can be found here
 // https://nightwatchjs.org/gettingstarted/configuration/
@@ -26,13 +33,7 @@ module.exports = {
             access_key: process.env.SAUCE_ACCESS_KEY,
             desiredCapabilities: {
                 seleniumVersion: '3.141.59',
-                'sauce:options': {
-                    build,
-                    screenResolution: '1600x1200',
-                    // Captures HAR/network logs and console logs (Chrome/Firefox only)
-                    extendedDebugging: true,
-                    tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
-                },
+                'sauce:options': sauceOptions,
             },
         },
         // Sauce Labs capabilities
@@ -51,6 +52,11 @@ module.exports = {
                     prefs: {
                         'profile.password_manager_leak_detection': false,
                     },
+                },
+                'sauce:options': {
+                    ...sauceOptions,
+                    // Page-load performance metrics (Chrome only, needs extendedDebugging)
+                    capturePerformance: true,
                 },
             },
         },

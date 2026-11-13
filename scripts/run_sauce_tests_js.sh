@@ -71,7 +71,7 @@ install_deps() {
 echo "--- Section: Nightwatch ---" >> "$LOG_FILE"
 pushd nightwatch/desktop > /dev/null
     install_deps
-    run_npm "framework:nightwatch,cli:nightwatch,lang:javascript,usecase:desktop-ui,feature:network-capture" npm run test.saucelabs.eu
+    run_npm "framework:nightwatch,cli:nightwatch,lang:javascript,usecase:desktop-ui,feature:network-capture,feature:extended-debugging,feature:performance-mode" npm run test.saucelabs.eu
 popd > /dev/null
 
 pushd nightwatch/mobile > /dev/null
@@ -82,11 +82,11 @@ popd > /dev/null
 
 # --- 2. WebdriverIO: Desktop ---
 echo "--- Section: WebdriverIO Desktop ---" >> "$LOG_FILE"
-for dir in "best-practices:desktop-ui-best-practices:typescript:feature:network-capture" \
-           "examples/w3c:w3c-capabilities:javascript:feature:network-capture" \
+for dir in "best-practices:desktop-ui-best-practices:typescript:feature:network-capture,feature:extended-debugging,feature:performance-mode" \
+           "examples/w3c:w3c-capabilities:javascript:feature:network-capture,feature:extended-debugging,feature:performance-mode" \
            "examples/deque:deque-web:typescript:feature:accessibility,feature:network-capture" \
-           "examples/cucumberjs:bdd-cucumber:javascript:feature:network-capture" \
-           "examples/typescript:typescript-demo:typescript:feature:network-capture,feature:performance-mode"; do
+           "examples/cucumberjs:bdd-cucumber:javascript:feature:network-capture,feature:extended-debugging,feature:performance-mode" \
+           "examples/typescript:typescript-demo:typescript:feature:network-capture,feature:extended-debugging,feature:performance-mode"; do
     subdir="${dir%%:*}"
     rest="${dir#*:}"
     usecase="${rest%%:*}"
@@ -103,7 +103,7 @@ done
 echo "--- Section: WebdriverIO Mobile Web ---" >> "$LOG_FILE"
 pushd webdriverio/mobile-web/examples > /dev/null
     install_deps
-    run_npm "framework:webdriverio,cli:wdio,lang:javascript,usecase:mobile-web" npm run test.saucelabs.eu
+    run_npm "framework:webdriverio,cli:wdio,lang:javascript,usecase:mobile-web,feature:extended-debugging,feature:performance-mode" npm run test.saucelabs.eu
 popd > /dev/null
 
 pushd webdriverio/mobile-web/best-practices > /dev/null
@@ -117,10 +117,10 @@ echo "--- Section: WebdriverIO Mobile App ---" >> "$LOG_FILE"
 
 pushd webdriverio/mobile-app/best-practices > /dev/null
     install_deps
-    run_npm "framework:webdriverio,cli:wdio,lang:typescript,usecase:mobile-app-best-practices" npm run test.saucelabs.android.emu.eu
+    run_npm "framework:webdriverio,cli:wdio,lang:typescript,usecase:mobile-app-best-practices,feature:extended-debugging,feature:performance-mode" npm run test.saucelabs.android.emu.eu
     run_npm "framework:webdriverio,cli:wdio,lang:typescript,usecase:mobile-app-best-practices,feature:network-capture,feature:device-vitals" npm run test.saucelabs.android.rdc.eu
     run_npm "framework:webdriverio,cli:wdio,lang:typescript,usecase:mobile-app-best-practices,feature:network-capture,feature:device-vitals" npm run test.saucelabs.ios.rdc.eu
-    run_npm "framework:webdriverio,cli:wdio,lang:typescript,usecase:mobile-app-best-practices" npm run test.saucelabs.ios.sim.eu
+    run_npm "framework:webdriverio,cli:wdio,lang:typescript,usecase:mobile-app-best-practices,feature:extended-debugging,feature:performance-mode" npm run test.saucelabs.ios.sim.eu
 popd > /dev/null
 
 pushd webdriverio/mobile-app/examples/up-download-file > /dev/null

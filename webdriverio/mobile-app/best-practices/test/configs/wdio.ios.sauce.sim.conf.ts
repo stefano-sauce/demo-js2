@@ -46,6 +46,8 @@ config.capabilities = ['17.0'].map(
       build: buildName,
       appiumVersion: '2.1.3',
       tags: sauceTags,
+      extendedDebugging: true,
+      capturePerformance: true,
     },
   })
 );

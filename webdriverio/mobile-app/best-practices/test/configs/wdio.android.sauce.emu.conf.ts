@@ -48,6 +48,8 @@ config.capabilities = ['14', '15'].map((osVersion: string) => ({
     build: buildName,
     appiumVersion: '2.11.0',
     tags: sauceTags,
+    extendedDebugging: true,
+    capturePerformance: true,
   },
 }));
 

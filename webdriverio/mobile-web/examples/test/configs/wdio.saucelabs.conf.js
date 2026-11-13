@@ -46,6 +46,8 @@ config.capabilities = [
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
       appiumVersion: '1.18.1',
       tags: sauceTags,
+      extendedDebugging: true,
+      capturePerformance: true,
     },
   },
   /**
@@ -58,8 +60,9 @@ config.capabilities = [
     // All Appium capabilities, see
     // http://appium.io/docs/en/writing-running-appium/caps/
     // should be prefixed with `appium:{capability-name}`
-    'appium:deviceName': 'iPhone 11 Simulator',
-    'appium:platformVersion': '14.0',
+    // Extended debugging needs a simulator on macOS 13+, so use a current iOS version
+    'appium:deviceName': 'iPhone Simulator',
+    'appium:platformVersion': '17.0',
     'appium:automationName': 'XCUITest',
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
@@ -70,8 +73,10 @@ config.capabilities = [
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.19.1',
+      appiumVersion: '2.1.3',
       tags: sauceTags,
+      extendedDebugging: true,
+      capturePerformance: true,
     },
   },
 ];

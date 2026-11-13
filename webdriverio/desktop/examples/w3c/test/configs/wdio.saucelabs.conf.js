@@ -43,6 +43,8 @@ config.capabilities = [
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       extendedDebugging: true,
+      // Page-load performance metrics (Chrome only, needs extendedDebugging)
+      capturePerformance: true,
       build: `Sauce Labs W3C Desktop build-${new Date().getTime()}`,
       screenResolution: '1440x900',
       tags: sauceTags,

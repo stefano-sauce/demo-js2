@@ -43,6 +43,8 @@ config.capabilities = [
     },
     'sauce:options': {
       ...defaultBrowserSauceOptions,
+      // Page-load performance metrics (Chrome only, needs extendedDebugging)
+      capturePerformance: true,
     },
   },
   {

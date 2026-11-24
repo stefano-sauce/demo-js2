@@ -18,10 +18,6 @@ You can also simply
 * `cd webdriver/web/examples/typescript`
 * `npm install`
   
-You can run your tests on Sauce Labs US DC with this command
-
-    npm run test.saucelabs.us
-
 You can run your tests on Sauce Labs EU DC with this command
 
     npm run test.saucelabs.eu

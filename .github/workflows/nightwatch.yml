@@ -31,7 +31,7 @@ jobs:
         run: npm install
         working-directory: nightwatch/desktop
       - name: Run WebDriver tests
-        run: npm run test.saucelabs.us
+        run: npm run test.saucelabs.eu
         working-directory: nightwatch/desktop
 
   mobile-ios:
@@ -47,7 +47,7 @@ jobs:
         run: npm install
         working-directory: nightwatch/mobile
       - name: Run Appium Web tests
-        run: npm run test.saucelabs.ios.us
+        run: npm run test.saucelabs.ios.eu
         working-directory: nightwatch/mobile
 
   mobile-android:
@@ -63,5 +63,5 @@ jobs:
         run: npm install
         working-directory: nightwatch/mobile
       - name: Run Appium Web tests
-        run: npm run test.saucelabs.android.us
+        run: npm run test.saucelabs.android.eu
         working-directory: nightwatch/mobile

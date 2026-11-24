@@ -5,14 +5,10 @@
   "scripts": {
     "test.android.local.emu": "wdio tests/configs/wdio.android.local.emu.conf.js",
     "test.android.sauce.real.eu": "REGION=eu wdio tests/configs/wdio.android.sauce.real.conf.js",
-    "test.android.sauce.real.us": "wdio tests/configs/wdio.android.sauce.real.conf.js",
     "test.android.sauce.emu.eu": "REGION=eu wdio tests/configs/wdio.android.sauce.emu.conf.js",
-    "test.android.sauce.emu.us": "wdio tests/configs/wdio.android.sauce.emu.conf.js",
     "test.ios.local.sim": "wdio tests/configs/wdio.ios.local.sim.conf.js",
     "test.ios.sauce.real.eu": "REGION=eu wdio tests/configs/wdio.ios.sauce.real.conf.js",
-    "test.ios.sauce.real.us": "wdio tests/configs/wdio.ios.sauce.real.conf.js",
-    "test.ios.sauce.sim.eu": "REGION=eu wdio tests/configs/wdio.ios.sauce.sim.conf.js",
-    "test.ios.sauce.sim.us": "wdio tests/configs/wdio.ios.sauce.sim.conf.js"
+    "test.ios.sauce.sim.eu": "REGION=eu wdio tests/configs/wdio.ios.sauce.sim.conf.js"
   },
   "keywords": [],
   "author": "",

@@ -96,9 +96,6 @@ the following command from the root of this folder
       # OR for use with the EU data center
       npm run test.sauce.ex{#}.eu
 
-      # OR for use with the US data center
-      npm run test.sauce.ex{#}.us
-
 The `#` stands for the number of the below mentioned examples.
 
 ### Example 1 - Minimal configuration for all tests

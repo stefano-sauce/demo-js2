@@ -4,9 +4,7 @@
   "description": "Deque axe DevTools Mobile accessibility scans of native apps on Sauce Labs real devices",
   "scripts": {
     "test.sauce.rdc.android.eu": "REGION=eu wdio test/configs/wdio.android.sauce.rdc.conf.js",
-    "test.sauce.rdc.android.us": "wdio test/configs/wdio.android.sauce.rdc.conf.js",
-    "test.sauce.rdc.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.rdc.conf.js",
-    "test.sauce.rdc.ios.us": "wdio test/configs/wdio.ios.sauce.rdc.conf.js"
+    "test.sauce.rdc.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.rdc.conf.js"
   },
   "keywords": [],
   "author": "",

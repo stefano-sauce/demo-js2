@@ -41,7 +41,7 @@ jobs:
         run: npm install
         working-directory: webdriverio/desktop/${{ matrix.directory }}
       - name: Run WebDriver tests
-        run: npm run test.saucelabs.us
+        run: npm run test.saucelabs.eu
         working-directory: webdriverio/desktop/${{ matrix.directory }}
 
   mobile-web:
@@ -51,11 +51,11 @@ jobs:
       matrix:
         include:
           - directory: 'examples'
-            variant: 'test.saucelabs.us'
+            variant: 'test.saucelabs.eu'
           - directory: 'best-practices'
-            variant: 'test.saucelabs.android.us'
+            variant: 'test.saucelabs.android.eu'
           - directory: 'best-practices'
-            variant: 'test.saucelabs.ios.us'
+            variant: 'test.saucelabs.ios.eu'
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -77,29 +77,29 @@ jobs:
       matrix:
         include:
           - directory: 'best-practices'
-            variant: 'test.saucelabs.android.emu.us'
+            variant: 'test.saucelabs.android.emu.eu'
           - directory: 'best-practices'
-            variant: 'test.saucelabs.ios.sim.us'
+            variant: 'test.saucelabs.ios.sim.eu'
           - directory: 'best-practices'
-            variant: 'test.saucelabs.android.rdc.us'
+            variant: 'test.saucelabs.android.rdc.eu'
           - directory: 'best-practices'
-            variant: 'test.saucelabs.ios.rdc.us'
+            variant: 'test.saucelabs.ios.rdc.eu'
           - directory: 'examples/up-download-file'
-            variant: 'test.sauce.android.emulator.us'
+            variant: 'test.sauce.android.emulator.eu'
           - directory: 'examples/up-download-file'
-            variant: 'test.sauce.ios.simulator.us'
+            variant: 'test.sauce.ios.simulator.eu'
           - directory: 'examples/simple-example'
-            variant: 'test.saucelabs.android.emu.us'
+            variant: 'test.saucelabs.android.emu.eu'
           - directory: 'examples/simple-example'
-            variant: 'test.saucelabs.ios.sim.us'
+            variant: 'test.saucelabs.ios.sim.eu'
           - directory: 'examples/appium-flutter-integration'
-            variant: 'android.flutter.sauce.rdc.app.us'
+            variant: 'android.flutter.sauce.rdc.app.eu'
           - directory: 'examples/appium-flutter-integration'
-            variant: 'ios.flutter.sauce.rdc.app.us'
+            variant: 'ios.flutter.sauce.rdc.app.eu'
           - directory: 'examples/appium-flutter'
-            variant: 'test.sauce.real.android.us'
+            variant: 'test.sauce.real.android.eu'
           - directory: 'examples/appium-flutter'
-            variant: 'test.sauce.real.ios.us'
+            variant: 'test.sauce.real.ios.eu'
     steps:
       - name: Checkout code
         uses: actions/checkout@v7

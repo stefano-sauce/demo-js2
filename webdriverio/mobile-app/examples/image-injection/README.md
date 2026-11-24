@@ -46,9 +46,6 @@ When you've done that you will see for example the following logs
 ## Run tests on Sauce Labs Android real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the Android test with
 
-    // If using the US DC
-    npm run test.sauce.rdc.android.us
-    
     // If using the EU DC
     npm run test.sauce.rdc.android.eu
     
@@ -59,9 +56,6 @@ See this [config](test/configs/wdio.android.sauce.real.conf.js)-file for more in
 ## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
 
-    // If using the US DC
-    npm run test.sauce.rdc.ios.us
-    
     // If using the EU DC
     npm run test.sauce.rdc.ios.eu
     

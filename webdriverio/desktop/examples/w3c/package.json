@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test.saucelabs.eu": "REGION=eu npx wdio test/configs/wdio.saucelabs.conf.js",
-    "test.saucelabs.us": "npx wdio test/configs/wdio.saucelabs.conf.js"
+    "test.saucelabs.eu": "REGION=eu npx wdio test/configs/wdio.saucelabs.conf.js"
   },
   "keywords": [],
   "author": "",

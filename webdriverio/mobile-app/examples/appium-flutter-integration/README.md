@@ -38,8 +38,6 @@ To run the test on Sauce Labs, execute the following commands to make it work
 
 | **REGION** | **OS**  | **App**                    | **Driver**                 | **Command**                                |
 |------------|---------|----------------------------|----------------------------|--------------------------------------------|
-| US         | Android | sl_my_demo_flutter_app.apk | Flutter Integration Driver | `npm run android.flutter.sauce.rdc.app.us` |
-| US         | iOS     | sl_my_demo_flutter_app.ipa | Flutter Integration Driver | `npm run ios.flutter.sauce.rdc.app.us`     |
 | EU         | Android | sl_my_demo_flutter_app.apk | Flutter Integration Driver | `npm run android.flutter.sauce.rdc.app.eu` |
 | EU         | iOS     | sl_my_demo_flutter_app.ipa | Flutter Integration Driver | `npm run ios.flutter.sauce.rdc.app.eu`     |
 

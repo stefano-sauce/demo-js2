@@ -2,7 +2,7 @@ const { test: base, chromium, request } = require('@playwright/test');
 
 const SAUCE_USERNAME = process.env.SAUCE_USERNAME;
 const SAUCE_ACCESS_KEY = process.env.SAUCE_ACCESS_KEY;
-const SAUCE_REGION = process.env.SAUCE_REGION || 'us-west-1';
+const SAUCE_REGION = process.env.SAUCE_REGION || 'eu-central-1';
 const SAUCE_URL = `https://ondemand.${SAUCE_REGION}.saucelabs.com/wd/hub/`;
 const SAUCE_BUILD_NAME = process.env.SAUCE_BUILD_NAME || 'Local Playwright Grid' + Date.now();
 const SAUCE_TAGS = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);

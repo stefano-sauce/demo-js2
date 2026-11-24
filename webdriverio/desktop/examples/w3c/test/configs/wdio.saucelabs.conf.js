@@ -8,7 +8,7 @@ const sauceTags = (process.env.SAUCE_TAGS || '').split(',').filter(Boolean);
 // See https://webdriver.io/docs/sauce-service.html for more information
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
-config.region = process.env.REGION || 'us';
+config.region = process.env.REGION || 'eu';
 
 // ===================================================================================
 // Capabilities

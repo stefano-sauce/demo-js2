@@ -88,9 +88,7 @@ The tests can be executed on the EU or US Data Center, all depending on what you
 the correct Data Centers.
 
 - **Android EU:** `npm run test.android.sauce.emu.eu`
-- **Android US:** `npm run test.android.sauce.emu.us`
 - **iOS EU:** `npm run test.ios.sauce.sim.eu`
-- **iOS US:** `npm run test.ios.sauce.sim.us`
 
 > **NOTE:** When this repository was made Appium 1.19.0 was not available on the Emulator cloud.
 >This means the tests will fail when you try to use the newest Android Gesture commands.
@@ -105,6 +103,4 @@ The tests can be executed on the EU or US Data Center, all depending on what you
 the correct Data Centers.
 
 - **Android EU:** `npm run test.android.sauce.real.eu`
-- **Android US:** `npm run test.android.sauce.real.us`
 - **iOS EU:** `npm run test.ios.sauce.real.eu`
-- **iOS US:** `npm run test.ios.sauce.real.us`

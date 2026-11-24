@@ -143,10 +143,6 @@ Spec Files:      8 passed, 8 total (100% completed) in 00:00:19
 </details>
 
 ## Run tests on Sauce Labs
-You can run your tests on Sauce Labs US DC with this command
-
-    npm run test.saucelabs.us
-
 You can run your tests on Sauce Labs EU DC with this command
 
     npm run test.saucelabs.eu

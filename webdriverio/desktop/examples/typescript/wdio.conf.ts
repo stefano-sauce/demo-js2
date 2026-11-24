@@ -19,10 +19,10 @@ exports.config = {
   key: process.env.SAUCE_ACCESS_KEY,
   //
   // If you run your tests on Sauce Labs you can specify the region you want to run your tests
-  // in via the `region` property. Available short handles for regions are `us` (default) and `eu`.
+  // in via the `region` property. Available short handles for regions are `eu` (default) and `us`.
   // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
   // If you don't provide the region it will default for the `us`
-  region: process.env.REGION || 'us',
+  region: process.env.REGION || 'eu',
   //
   // ==================
   // Specify Test Files

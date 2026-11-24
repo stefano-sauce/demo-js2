@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test.saucelabs.android.eu": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env androidChrome",
-    "test.saucelabs.android.us": "DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env androidChrome",
     "test.saucelabs.ios.eu": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env iosSafari",
-    "test.saucelabs.ios.us": "DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env iosSafari",
     "lint": "eslint ../.. --ext .js"
   },
   "keywords": [],

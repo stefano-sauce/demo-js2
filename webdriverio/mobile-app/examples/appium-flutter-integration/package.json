@@ -25,8 +25,6 @@
     "webdriverio": "^8.36.1"
   },
   "scripts": {
-    "android.flutter.sauce.rdc.app.us": "REGION=us wdio run test/configs/android.sauce.conf.ts",
-    "ios.flutter.sauce.rdc.app.us": "REGION=us wdio run test/configs/ios.sauce.conf.ts",
     "android.flutter.sauce.rdc.app.eu": "REGION=eu wdio run test/configs/android.sauce.conf.ts",
     "ios.flutter.sauce.rdc.app.eu": "REGION=eu wdio run test/configs/ios.sauce.conf.ts"
   }

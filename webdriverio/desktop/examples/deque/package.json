@@ -7,8 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.ts",
-    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.ts"
+    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.ts"
   },
   "author": "",
   "license": "MIT",

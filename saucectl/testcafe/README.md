@@ -45,9 +45,6 @@ There are two options to run the examples (see the [examples](#examples) below):
      ```shell
      # For the EU DC, where `#` is the number of the example
      npm run test.sauce.ex#.eu
-     
-     # For the US DC, where `#` is the number of the example
-     npm run test.sauce.ex#.us
      ```
    
 1. Or using the `saucectl`-command and select a configuration. This can be done by opening a terminal and type in the 
@@ -58,7 +55,7 @@ following command
 
     ```shell
     # For the EU DC, where `#` is the number of the example
-    npx saucectl run -c ./.sauce/config-ex1.yml --region
+    npx saucectl run -c ./.sauce/config-ex1.yml --region eu-central-1
      
     # For the US DC, where `#` is the number of the example
     npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1
@@ -138,9 +135,6 @@ npx saucectl run -c ./.sauce/config-ex#.yml
 
 # OR for use with the EU data center
 npm run test.sauce.ex#.eu
-
-# OR for use with the US data center
-npm run test.sauce.ex#.us
 ```
 
 > **Note:** The `#` stands for the number of the below mentioned examples.

@@ -38,13 +38,4 @@ You can run your tests on Sauce Labs EU DC with this command for Android
 and this command for iOS
 
     npm run test.saucelabs.ios.eu
-    
-You can run your tests on Sauce Labs US DC with this command for Android
-
-    npm run test.saucelabs.android.us
-
-and this command for iOS
-
-    npm run test.saucelabs.ios.us
-
 

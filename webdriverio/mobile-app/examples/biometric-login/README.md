@@ -85,9 +85,6 @@ see [this](test/screen-objects/AndroidSettings.ts)-file. The method `enableBiome
 ## Run Tests on Android Real Devices in the Sauce Labs Real Device Cloud
 If you want to run the tests on Android Sauce Labs Real Devices then you can run the Android test with
 
-    // If using the US DC
-    npm run test.sauce.rdc.andoid.us
-
     // If using the EU DC
     npm run test.sauce.rdc.andoid.eu
 
@@ -102,9 +99,6 @@ expression, for more information about that please check the
 
 ## Run tests on Android Emulators in the Sauce Labs Emulator Cloud
 If you want to run the tests on Sauce Labs Android emulators then you can run the Android test with
-
-    // If using the US DC
-    npm run test.sauce.emulator.andoid.us
 
     // If using the EU DC
     npm run test.sauce.emulator.andoid.eu
@@ -125,9 +119,6 @@ See this [config](test/configs/wdio.android.sauce.emu.conf.ts)-file for more inf
 ## Run Tests on iOS Real Devices in the Sauce Labs Real Device Cloud
 If you want to run the tests on iOS Sauce Labs Real Devices then you can run the iOS test with
 
-    // If using the US DC
-    npm run test.sauce.rdc.ios.us
-
     // If using the EU DC
     npm run test.sauce.rdc.ios.eu
 
@@ -141,9 +132,6 @@ expression, for more information about that please check the [iOS config](test/c
 
 ## Run tests on iOS Simulators in the Sauce Labs Emulator Cloud
 If you want to run the tests on Sauce Labs iOS simulators then you can run the Android test with
-
-    // If using the US DC
-    npm run test.sauce.simulator.ios.us
 
     // If using the EU DC
     npm run test.sauce.simulator.ios.eu

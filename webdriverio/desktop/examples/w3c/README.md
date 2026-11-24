@@ -17,10 +17,6 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `webdriverio/webdriver/examples/w3c` when you execute this command
 
 ## Run tests on Sauce Labs
-You can run your tests on Sauce Labs US DC with this command
-
-    npm run test.saucelabs.us
-
 You can run your tests on Sauce Labs EU DC with this command
 
     npm run test.saucelabs.eu

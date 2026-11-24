@@ -5,13 +5,9 @@
   "main": "",
   "scripts": {
     "test.sauce.emulator.andoid.eu": "REGION=eu npx wdio test/configs/wdio.android.sauce.emu.conf.ts",
-    "test.sauce.emulator.andoid.us": "npx wdio test/configs/wdio.android.sauce.emu.conf.ts",
     "test.sauce.rdc.andoid.eu": "REGION=eu npx wdio test/configs/wdio.android.sauce.rdc.conf.ts",
-    "test.sauce.rdc.andoid.us": "npx wdio test/configs/wdio.android.sauce.rdc.conf.ts",
     "test.sauce.rdc.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.rdc.conf.ts",
-    "test.sauce.rdc.ios.us": "wdio test/configs/wdio.ios.sauce.rdc.conf.ts",
-    "test.sauce.simulator.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.sim.conf.ts",
-    "test.sauce.simulator.ios.us": "wdio test/configs/wdio.ios.sauce.sim.conf.ts"
+    "test.sauce.simulator.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.sim.conf.ts"
   },
   "keywords": [],
   "license": "MIT",

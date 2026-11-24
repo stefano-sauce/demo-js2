@@ -55,7 +55,7 @@ const config = {
         : [['@saucelabs/playwright-reporter', {
             mergeVideos: true,
             outputFile: 'sauce-report.json',
-            region: process.env.SAUCE_REGION || 'us-west-1',
+            region: process.env.SAUCE_REGION || 'eu-central-1',
             tags: (process.env.SAUCE_TAGS || '').split(',').filter(Boolean),
           }], ['list']],
 

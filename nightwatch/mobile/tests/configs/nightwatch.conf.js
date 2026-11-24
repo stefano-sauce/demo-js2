@@ -21,7 +21,7 @@ module.exports = {
         // Our Sauce Labs object
         sauceLabs: {
             selenium: {
-                host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
+                host: `ondemand.${process.env.REGION === 'us' ? 'us-west-1' : 'eu-central-1'}.saucelabs.com`,
                 port: 443,
             },
             username: process.env.SAUCE_USERNAME,

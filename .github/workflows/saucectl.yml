@@ -25,11 +25,11 @@ jobs:
       matrix:
         include:
           - directory: 'cypress-js'
-            variant: 'test.sauce.ex1.us'
+            variant: 'test.sauce.ex1.eu'
           - directory: 'playwright'
-            variant: 'test.sauce.ex1.us'
+            variant: 'test.sauce.ex1.eu'
           - directory: 'testcafe'
-            variant: 'test.sauce.ex1.us'
+            variant: 'test.sauce.ex1.eu'
     steps:
       - name: Checkout code
         uses: actions/checkout@v7

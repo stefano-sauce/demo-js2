@@ -24,13 +24,6 @@ Running on sauce, you can download the apps used from [here](https://github.com/
 
 And manually upload them to the preferred Data Center, see [this](https://docs.saucelabs.com/mobile-apps/live-testing/live-mobile-app-testing/#uploading-an-app) for the instructions.
 
-You can run your tests on Sauce Labs US DC with this command
-
-    # Run Android Emulator Tests
-    npm run test.saucelabs.android.emu.us
-    # Run iOS Simulators Tests
-    npm run test.saucelabs.ios.sim.us
-
 You can run your tests on Sauce Labs EU DC with this command
 
     # Run Android Emulator Tests

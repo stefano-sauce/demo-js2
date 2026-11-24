@@ -13,6 +13,6 @@ This will install all needed dependencies that are listed in the `package.json`-
 ## Run tests on Sauce Labs
 
 ```js
-npm run test.safari.us
+npm run test.safari.eu
 ```
 

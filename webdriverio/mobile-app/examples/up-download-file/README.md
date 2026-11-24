@@ -69,9 +69,6 @@ will look like this
 ## Android real devices on the Sauce Labs RDC Cloud
 If you want to run the tests on Sauce Labs real devices then you can run the Android test with
 
-    // If using the US DC
-    npm run test.sauce.rdc.android.us
-    
     // If using the EU DC
     npm run test.sauce.rdc.android.eu
     
@@ -82,9 +79,6 @@ See this [config](test/configs/wdio.android.sauce.real.conf.js)-file for more in
 ## Run tests on Sauce Labs Android Emulators
 If you want to run the tests on Sauce Labs Android Emulators then you can run the Android test with
 
-    // If using the US DC
-    npm run test.sauce.android.emulator.us
-    
     // If using the EU DC
     npm run test.sauce.android.emulator.eu
     
@@ -102,9 +96,6 @@ Please check this [config](test/configs/wdio.android.local.emu.conf.js)-file for
 ## Run tests on Sauce Labs iOS Simulators
 If you want to run the tests on Sauce Labs iOS Simulators then you can run the iOS test with
 
-    // If using the US DC
-    npm run test.sauce.ios.simulator.us
-    
     // If using the EU DC
     npm run test.sauce.ios.simulator.eu
     

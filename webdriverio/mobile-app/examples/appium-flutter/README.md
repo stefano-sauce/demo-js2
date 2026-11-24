@@ -30,13 +30,6 @@ You have the option to use native Appium commands, to do so, you need to switch 
 
 ## Run tests on Sauce Labs
 
-You can run your tests on Sauce Labs US DC with this command
-
-    # Run Android Real Devices Test
-    npm run test.sauce.real.android.us
-    # Run iOS Real Devices Tests
-    npm run test.sauce.real.ios.us
-
 You can run your tests on Sauce Labs EU DC with this command
 
     # Run Android Real Devices Test

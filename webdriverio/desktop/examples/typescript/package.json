@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.saucelabs.eu": "REGION=eu wdio wdio.conf.ts",
-    "test.saucelabs.us": "wdio wdio.conf.ts"
+    "test.saucelabs.eu": "REGION=eu wdio wdio.conf.ts"
   },
   "keywords": [],
   "author": "",

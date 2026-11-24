@@ -27,7 +27,7 @@ describe('Sauce Demo Test', function() {
       }
     }
 
-    const region = process.env.SAUCE_REGION || 'us-west-1';
+    const region = process.env.SAUCE_REGION || 'eu-central-1';
 
     driver = await new webdriver.Builder()
       .withCapabilities(capabilities)

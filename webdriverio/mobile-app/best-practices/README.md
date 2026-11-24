@@ -36,17 +36,6 @@ And manually upload them to the preferred Data Center, see [this](https://docs.s
 
 ## Run tests on Sauce Labs
 
-You can run your tests on Sauce Labs US DC with this command
-
-    # Run Android Real Devices Tests
-    npm run test.saucelabs.android.rdc.us
-    # Run iOS Real Devices Tests
-    npm run test.saucelabs.ios.rdc.us
-    # Run Android Emulator Tests
-    npm run test.saucelabs.android.emu.us
-    # Run iOS Simulators Tests
-    npm run test.saucelabs.ios.sim.us
-
 You can run your tests on Sauce Labs EU DC with this command
 
     # Run Android Real Devices Tests

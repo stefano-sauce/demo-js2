@@ -4,8 +4,8 @@ exports.config = {
   runner: 'local',
   user: process.env.SAUCE_USERNAME,
   key: process.env.SAUCE_ACCESS_KEY,
-  // Available short handles for regions are `us` (default) and `eu`.
-  region: process.env.REGION || 'us',
+  // Available short handles for regions are `eu` (default) and `us`.
+  region: process.env.REGION || 'eu',
 
   specs: ['../specs/*.spec.js'],
   maxInstances: 10,

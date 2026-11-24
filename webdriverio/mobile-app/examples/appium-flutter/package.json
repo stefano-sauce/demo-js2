@@ -14,8 +14,6 @@
   },
   "scripts": {
     "test.sauce.real.android.eu": "REGION=eu wdio run test/configs/wdio.android.sauce.real.conf.ts",
-    "test.sauce.real.android.us": "wdio run test/configs/wdio.android.sauce.real.conf.ts",
-    "test.sauce.real.ios.eu": "REGION=eu wdio run test/configs/wdio.ios.sauce.real.conf.ts",
-    "test.sauce.real.ios.us": " wdio run test/configs/wdio.ios.sauce.real.conf.ts"
+    "test.sauce.real.ios.eu": "REGION=eu wdio run test/configs/wdio.ios.sauce.real.conf.ts"
   }
 }
